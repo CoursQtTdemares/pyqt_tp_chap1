@@ -3,6 +3,9 @@ from zoneinfo import ZoneInfo
 
 from PyQt6.QtWidgets import QHBoxLayout, QLineEdit, QMainWindow, QPushButton, QTextEdit, QVBoxLayout, QWidget
 
+from src.domain.constants import STYLES_PATH
+from src.utils import load_styles
+
 PARIS_TZ = ZoneInfo("Europe/Paris")
 
 
@@ -11,6 +14,9 @@ class MainWindow(QMainWindow):
         super().__init__()
         self.setWindowTitle("Ma Première Application, TP chapitre 1")
         self.setGeometry(100, 100, 800, 600)
+
+        # Charger le fichier de style
+        self.setStyleSheet(load_styles(STYLES_PATH))
 
         central_widget = QWidget()
         self.setCentralWidget(central_widget)

@@ -1,4 +1,4 @@
-from PyQt6.QtWidgets import QLineEdit, QMainWindow, QPushButton, QTextEdit, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QHBoxLayout, QLineEdit, QMainWindow, QPushButton, QTextEdit, QVBoxLayout, QWidget
 
 
 class MainWindow(QMainWindow):
@@ -13,13 +13,16 @@ class MainWindow(QMainWindow):
         layout = QVBoxLayout()
         central_widget.setLayout(layout)
 
+        horizontal_layout = QHBoxLayout()
+        layout.addLayout(horizontal_layout)
+
         line_edit = QLineEdit()
         line_edit.textChanged.connect(self.on_line_edit_changed)
-        layout.addWidget(line_edit)
+        horizontal_layout.addWidget(line_edit)
 
         button = QPushButton("Click me")
         button.clicked.connect(self.on_button_clicked)
-        layout.addWidget(button)
+        horizontal_layout.addWidget(button)
 
         self.text_edit = QTextEdit()
         self.text_edit.textChanged.connect(self.on_text_edit_changed)

@@ -1,8 +1,10 @@
-def main() -> None:
-    """Entry point for tp_qt_chap1."""
+import sys
 
-    ...
+from PyQt6.QtWidgets import QApplication, QLabel
 
+app = QApplication(sys.argv)
 
-if __name__ == "__main__":
-    main()
+label = QLabel("Hello, PyQt6!")
+label.show()
+
+sys.exit(app.exec())

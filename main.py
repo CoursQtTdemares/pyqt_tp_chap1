@@ -1,6 +1,7 @@
 import sys
 
 from PyQt6.QtCore import Qt
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication, QLabel, QPushButton, QVBoxLayout, QWidget
 
 
@@ -20,6 +21,7 @@ app = QApplication(sys.argv)
 
 
 main_widget = QWidget()
+main_widget.setWindowIcon(QIcon("corbeau.png"))
 layout = QVBoxLayout()
 
 main_widget.setLayout(layout)
